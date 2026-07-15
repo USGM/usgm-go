@@ -60,7 +60,7 @@ URL, which is particularly useful in test environments.
 
 ```go
 client := client.NewClient(
-    option.WithBaseURL(usgm.Environments.Default),
+    option.WithBaseURL(usgm.Environments.Production),
 )
 ```
 

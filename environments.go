@@ -7,7 +7,9 @@ package usgm
 // RequestOption to override the client's default environment,
 // if any.
 var Environments = struct {
-	Default string
+	Production string
+	Sandbox    string
 }{
-	Default: "https://api.usglobalmail.com",
+	Production: "https://api.usglobalmail.com",
+	Sandbox:    "https://api-sandbox.usglobalmail.com",
 }
