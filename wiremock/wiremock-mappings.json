@@ -1,0 +1,1314 @@
+{
+  "mappings": [
+    {
+      "id": "44ffdc30-178a-4b72-b4c6-9f1b8df88fea",
+      "name": "List mail items - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"folder_id\": \"folder_id\",\n      \"is_read\": true,\n      \"mail_status\": \"mail_status\",\n      \"mail_type\": \"mail_type\",\n      \"sender_name\": \"sender_name\",\n      \"recipient_name\": \"recipient_name\",\n      \"arrival_date\": \"2024-01-15T09:30:00Z\",\n      \"envelope_image_url\": \"envelope_image_url\",\n      \"quarantine_reason\": \"quarantine_reason\",\n      \"scan\": {\n        \"uuid\": \"uuid\",\n        \"status\": \"status\",\n        \"category\": \"category\"\n      }\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"total_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "44ffdc30-178a-4b72-b4c6-9f1b8df88fea",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "b6bb2b52-0641-462b-ab97-4c05c72d52da",
+      "name": "Get single mail - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "b6bb2b52-0641-462b-ab97-4c05c72d52da",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "107fabf8-1830-49ad-9faf-58b0f3dad3e5",
+      "name": "Update mail item - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "107fabf8-1830-49ad-9faf-58b0f3dad3e5",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "d9ddd0a5-c98f-48f6-b70c-dd34067a7930",
+      "name": "Archive mail item - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}/archive",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d9ddd0a5-c98f-48f6-b70c-dd34067a7930",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bec20b3d-d273-4753-8d9b-2895e51e1c89",
+      "name": "Unarchive mail item - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}/unarchive",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bec20b3d-d273-4753-8d9b-2895e51e1c89",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ad9f3e1c-d237-4ea4-93a9-12234b020ea6",
+      "name": "Discard mail item - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}/discard",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ad9f3e1c-d237-4ea4-93a9-12234b020ea6",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "36690f81-d717-4fc8-8a46-9eb51f3c0da5",
+      "name": "Undiscard mail item - default",
+      "request": {
+        "urlPathTemplate": "/v1/mails/{id}/undiscard",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"is_read\": true,\n  \"mail_status\": \"mail_status\",\n  \"mail_type\": \"mail_type\",\n  \"sender_name\": \"sender_name\",\n  \"recipient_name\": \"recipient_name\",\n  \"arrival_date\": \"2024-01-15T09:30:00Z\",\n  \"envelope_image_url\": \"envelope_image_url\",\n  \"quarantine_reason\": \"quarantine_reason\",\n  \"scan\": {\n    \"uuid\": \"uuid\",\n    \"status\": \"status\",\n    \"category\": \"category\",\n    \"label\": \"label\"\n  },\n  \"mail_type_label\": \"mail_type_label\",\n  \"measurement\": {\n    \"width\": 1.1,\n    \"height\": 1.1,\n    \"length\": 1.1\n  },\n  \"weight\": 1.1,\n  \"tracking_number\": \"tracking_number\",\n  \"sender_address\": \"sender_address\",\n  \"has_storage_charges\": true,\n  \"folder\": {\n    \"id\": \"id\",\n    \"name\": \"name\",\n    \"color\": \"color\"\n  }\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "36690f81-d717-4fc8-8a46-9eb51f3c0da5",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "39a1b48a-a00c-40ed-9771-c99fdb7569e1",
+      "name": "List scans - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"mail_id\": \"mail_id\",\n      \"type\": \"type\",\n      \"status\": \"status\",\n      \"is_expedited\": true,\n      \"instruction\": \"instruction\",\n      \"reject_reason\": \"reject_reason\",\n      \"label\": \"label\",\n      \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n      \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n      \"created_at\": \"2024-01-15T09:30:00Z\",\n      \"updated_at\": \"2024-01-15T09:30:00Z\"\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"total_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "39a1b48a-a00c-40ed-9771-c99fdb7569e1",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "21e47ae4-5f23-4464-badf-5cada8912081",
+      "name": "Create scan request - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"id\",\n  \"mail_id\": \"mail_id\",\n  \"type\": \"type\",\n  \"status\": \"status\",\n  \"is_expedited\": true,\n  \"instruction\": \"instruction\",\n  \"reject_reason\": \"reject_reason\",\n  \"label\": \"label\",\n  \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"updated_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "21e47ae4-5f23-4464-badf-5cada8912081",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "908e2448-ea77-4497-b514-9d9bfcee26ff",
+      "name": "Get single scan - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"mail_id\": \"mail_id\",\n  \"type\": \"type\",\n  \"status\": \"status\",\n  \"is_expedited\": true,\n  \"instruction\": \"instruction\",\n  \"reject_reason\": \"reject_reason\",\n  \"label\": \"label\",\n  \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"updated_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "908e2448-ea77-4497-b514-9d9bfcee26ff",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "527d41bf-fb62-4b0c-9635-01a776ea2954",
+      "name": "Delete scan - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans/{id}",
+        "method": "DELETE",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"mail_id\": \"mail_id\",\n  \"type\": \"type\",\n  \"status\": \"status\",\n  \"is_expedited\": true,\n  \"instruction\": \"instruction\",\n  \"reject_reason\": \"reject_reason\",\n  \"label\": \"label\",\n  \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"updated_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "527d41bf-fb62-4b0c-9635-01a776ea2954",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ffeca6b3-9ea3-4182-9fc4-1d76aaead9be",
+      "name": "Get scan file - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans/{id}/file",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"url\": \"url\",\n  \"expires_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ffeca6b3-9ea3-4182-9fc4-1d76aaead9be",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "9850a4a2-c4dd-45c0-9fea-b0cc288a4a7e",
+      "name": "Get scan summary - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans/{id}/summary",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"label\": \"label\",\n  \"summary\": [\n    \"summary\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "9850a4a2-c4dd-45c0-9fea-b0cc288a4a7e",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "647178b8-6b65-4083-ad71-58be0279999d",
+      "name": "Cancel scan request - default",
+      "request": {
+        "urlPathTemplate": "/v1/scans/{id}/cancel",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"mail_id\": \"mail_id\",\n  \"type\": \"type\",\n  \"status\": \"status\",\n  \"is_expedited\": true,\n  \"instruction\": \"instruction\",\n  \"reject_reason\": \"reject_reason\",\n  \"label\": \"label\",\n  \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"updated_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "647178b8-6b65-4083-ad71-58be0279999d",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "5f3c2702-89a1-419b-b387-1d5f4048c2b8",
+      "name": "List shipments - default",
+      "request": {
+        "urlPathTemplate": "/v1/shipments",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"type\": \"shipment\",\n      \"status\": \"shipped\",\n      \"tracking_number\": \"tracking_number\",\n      \"service_name\": \"service_name\",\n      \"item_count\": 1,\n      \"requested_ship_date\": \"2024-01-15T09:30:00Z\",\n      \"created_on\": \"2024-01-15T09:30:00Z\",\n      \"deposit_check_slip_company_name\": \"deposit_check_slip_company_name\"\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"total_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "5f3c2702-89a1-419b-b387-1d5f4048c2b8",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "66faef76-d3fa-4fb8-9048-a183388a0927",
+      "name": "Get single shipment - default",
+      "request": {
+        "urlPathTemplate": "/v1/shipments/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipment\",\n  \"status\": \"shipped\",\n  \"tracking_number\": \"tracking_number\",\n  \"service_name\": \"service_name\",\n  \"destination\": {\n    \"name\": \"name\",\n    \"line1\": \"line1\",\n    \"line2\": \"line2\",\n    \"city\": \"city\",\n    \"state\": \"state\",\n    \"postal_code\": \"postal_code\",\n    \"country\": \"country\"\n  },\n  \"item_count\": 1,\n  \"requested_ship_date\": \"2024-01-15T09:30:00Z\",\n  \"created_on\": \"2024-01-15T09:30:00Z\",\n  \"deposit_check_slip_company_name\": \"deposit_check_slip_company_name\",\n  \"instructions\": \"instructions\",\n  \"is_expedited\": true,\n  \"is_insured\": true,\n  \"insured_amount\": 1.1,\n  \"declared_value\": 1.1,\n  \"reject_reason\": \"reject_reason\",\n  \"mail_items\": [\n    {\n      \"id\": \"id\",\n      \"mail_type\": \"mail_type\",\n      \"sender_name\": \"sender_name\",\n      \"arrival_date\": \"2024-01-15T09:30:00Z\",\n      \"envelope_image_url\": \"envelope_image_url\"\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "66faef76-d3fa-4fb8-9048-a183388a0927",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ea0815d6-8f03-4052-9527-bc31e7665501",
+      "name": "List folders - default",
+      "request": {
+        "urlPathTemplate": "/v1/folders",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"name\": \"name\",\n      \"color\": \"color\",\n      \"created_on\": \"2024-01-15T09:30:00Z\",\n      \"updated_on\": \"2024-01-15T09:30:00Z\"\n    }\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ea0815d6-8f03-4052-9527-bc31e7665501",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "27efea81-6a6b-480a-9d07-d4574d93f1cd",
+      "name": "Create folder - default",
+      "request": {
+        "urlPathTemplate": "/v1/folders",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"id\",\n  \"name\": \"name\",\n  \"color\": \"color\",\n  \"created_on\": \"2024-01-15T09:30:00Z\",\n  \"updated_on\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "27efea81-6a6b-480a-9d07-d4574d93f1cd",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c05ded82-3049-4cf1-bc25-a432875c6b52",
+      "name": "Get single folder - default",
+      "request": {
+        "urlPathTemplate": "/v1/folders/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"name\": \"name\",\n  \"color\": \"color\",\n  \"created_on\": \"2024-01-15T09:30:00Z\",\n  \"updated_on\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c05ded82-3049-4cf1-bc25-a432875c6b52",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "4d85cd83-3f27-4ebe-9d26-234aca28a3e6",
+      "name": "Delete folder - default",
+      "request": {
+        "urlPathTemplate": "/v1/folders/{id}",
+        "method": "DELETE",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "\"\"",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "4d85cd83-3f27-4ebe-9d26-234aca28a3e6",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "bcb0888c-bda3-4ebb-98a2-035a425b5b55",
+      "name": "Update folder - default",
+      "request": {
+        "urlPathTemplate": "/v1/folders/{id}",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"name\": \"name\",\n  \"color\": \"color\",\n  \"created_on\": \"2024-01-15T09:30:00Z\",\n  \"updated_on\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "bcb0888c-bda3-4ebb-98a2-035a425b5b55",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ed89aba2-88b5-40a6-8ba5-7bead2e4955f",
+      "name": "List addresses - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"type\": \"shipping\",\n      \"name\": \"name\",\n      \"line1\": \"line1\",\n      \"line2\": \"line2\",\n      \"city\": \"city\",\n      \"state\": \"state\",\n      \"postal_code\": \"postal_code\",\n      \"country\": \"country\",\n      \"line3\": \"line3\",\n      \"phone_number\": \"phone_number\",\n      \"tax_id\": \"tax_id\",\n      \"is_default\": true\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"total_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ed89aba2-88b5-40a6-8ba5-7bead2e4955f",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "795ed2e8-bce2-4b04-8a34-2b42352e581d",
+      "name": "Add address - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipping\",\n  \"name\": \"name\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"line3\": \"line3\",\n  \"phone_number\": \"phone_number\",\n  \"tax_id\": \"tax_id\",\n  \"is_default\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "795ed2e8-bce2-4b04-8a34-2b42352e581d",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "edcd285f-cd4f-4b7b-8c58-e6831a4fdd96",
+      "name": "Get default - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses/default",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "queryParameters": {
+          "type": {
+            "equalTo": "shipping"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipping\",\n  \"name\": \"name\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"line3\": \"line3\",\n  \"phone_number\": \"phone_number\",\n  \"tax_id\": \"tax_id\",\n  \"is_default\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "edcd285f-cd4f-4b7b-8c58-e6831a4fdd96",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "5957908c-7b0f-41aa-8bb5-68402427cfef",
+      "name": "Get single address - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipping\",\n  \"name\": \"name\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"line3\": \"line3\",\n  \"phone_number\": \"phone_number\",\n  \"tax_id\": \"tax_id\",\n  \"is_default\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "5957908c-7b0f-41aa-8bb5-68402427cfef",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "b75c4eff-52d4-4f6d-b0b2-07bffc2d4d1d",
+      "name": "Delete address - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses/{id}",
+        "method": "DELETE",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "\"\"",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "b75c4eff-52d4-4f6d-b0b2-07bffc2d4d1d",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "08ccb47a-1fc0-414b-8463-3d14591a8ee9",
+      "name": "Update address - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses/{id}",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipping\",\n  \"name\": \"name\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"line3\": \"line3\",\n  \"phone_number\": \"phone_number\",\n  \"tax_id\": \"tax_id\",\n  \"is_default\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "08ccb47a-1fc0-414b-8463-3d14591a8ee9",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "8b2bf1f5-923e-43ef-b919-92c460c80f36",
+      "name": "Set default - default",
+      "request": {
+        "urlPathTemplate": "/v1/addresses/{id}/default",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"type\": \"shipping\",\n  \"name\": \"name\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"line3\": \"line3\",\n  \"phone_number\": \"phone_number\",\n  \"tax_id\": \"tax_id\",\n  \"is_default\": true\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "8b2bf1f5-923e-43ef-b919-92c460c80f36",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "c2e62f08-6b61-405b-9b96-42e010653457",
+      "name": "List bank accounts - default",
+      "request": {
+        "urlPathTemplate": "/v1/bank-accounts",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"data\": [\n    {\n      \"id\": \"id\",\n      \"bank_name\": \"bank_name\",\n      \"bank_state\": \"bank_state\",\n      \"account_number_last4\": \"account_number_last4\"\n    }\n  ],\n  \"next_cursor\": \"next_cursor\",\n  \"total_count\": 1\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "c2e62f08-6b61-405b-9b96-42e010653457",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "d38926c0-47e1-49cf-9393-732786322fa2",
+      "name": "Add bank account - default",
+      "request": {
+        "urlPathTemplate": "/v1/bank-accounts",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": "{\n  \"id\": \"id\",\n  \"bank_name\": \"bank_name\",\n  \"bank_state\": \"bank_state\",\n  \"account_number_last4\": \"account_number_last4\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "d38926c0-47e1-49cf-9393-732786322fa2",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "14a6d43c-bd45-4149-875d-1b55b4bb9947",
+      "name": "Get single bank account - default",
+      "request": {
+        "urlPathTemplate": "/v1/bank-accounts/{id}",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"bank_name\": \"bank_name\",\n  \"bank_state\": \"bank_state\",\n  \"account_number_last4\": \"account_number_last4\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "14a6d43c-bd45-4149-875d-1b55b4bb9947",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "6b6e081f-f36f-4fee-9ca8-5e87b1d7ce83",
+      "name": "Delete bank account - default",
+      "request": {
+        "urlPathTemplate": "/v1/bank-accounts/{id}",
+        "method": "DELETE",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "\"\"",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "6b6e081f-f36f-4fee-9ca8-5e87b1d7ce83",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "ac6e1101-0c0e-4543-abaa-35f93cf8b0a4",
+      "name": "Update bank account - default",
+      "request": {
+        "urlPathTemplate": "/v1/bank-accounts/{id}",
+        "method": "PATCH",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"bank_name\": \"bank_name\",\n  \"bank_state\": \"bank_state\",\n  \"account_number_last4\": \"account_number_last4\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "ac6e1101-0c0e-4543-abaa-35f93cf8b0a4",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "a3499021-23fa-4d68-96fc-f65fba6d6a31",
+      "name": "Get account - default",
+      "request": {
+        "urlPathTemplate": "/v1/account",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"name\": \"name\",\n  \"email\": \"email\",\n  \"phone_number\": \"phone_number\",\n  \"status\": \"status\",\n  \"box_number\": \"box_number\",\n  \"created_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "a3499021-23fa-4d68-96fc-f65fba6d6a31",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "b39258f5-60d8-449e-ad9e-598d906423f7",
+      "name": "Mailing address - default",
+      "request": {
+        "urlPathTemplate": "/v1/account/mailing-address",
+        "method": "GET",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"box_number\": \"box_number\",\n  \"line1\": \"line1\",\n  \"line2\": \"line2\",\n  \"line3\": \"line3\",\n  \"city\": \"city\",\n  \"state\": \"state\",\n  \"postal_code\": \"postal_code\",\n  \"country\": \"country\",\n  \"formatted\": \"formatted\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "b39258f5-60d8-449e-ad9e-598d906423f7",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      },
+      "postServeActions": []
+    },
+    {
+      "id": "327b9423-5d60-4e77-8b9b-74aecfa8b871",
+      "name": "Seed mailbox - default",
+      "request": {
+        "urlPathTemplate": "/v1/sandbox/seed",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"mail_ids\": [\n    \"mail_ids\"\n  ]\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "327b9423-5d60-4e77-8b9b-74aecfa8b871",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "1076a79b-912d-46e5-ab1e-4395c5c570cf",
+      "name": "Seed mail - default",
+      "request": {
+        "urlPathTemplate": "/v1/sandbox/seed/mail",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"mail_id\": \"mail_id\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "1076a79b-912d-46e5-ab1e-4395c5c570cf",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    },
+    {
+      "id": "1e130de5-d921-469e-a4af-16afc8edd387",
+      "name": "Complete scan - default",
+      "request": {
+        "urlPathTemplate": "/v1/sandbox/scans/{id}/complete",
+        "method": "POST",
+        "headers": {
+          "Authorization": {
+            "matches": "Bearer .+"
+          }
+        },
+        "pathParameters": {
+          "id": {
+            "equalTo": "id"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\n  \"id\": \"id\",\n  \"mail_id\": \"mail_id\",\n  \"type\": \"type\",\n  \"status\": \"status\",\n  \"is_expedited\": true,\n  \"instruction\": \"instruction\",\n  \"reject_reason\": \"reject_reason\",\n  \"label\": \"label\",\n  \"status_updated_at\": \"2024-01-15T09:30:00Z\",\n  \"auto_delete_on\": \"2024-01-15T09:30:00Z\",\n  \"created_at\": \"2024-01-15T09:30:00Z\",\n  \"updated_at\": \"2024-01-15T09:30:00Z\"\n}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "uuid": "1e130de5-d921-469e-a4af-16afc8edd387",
+      "persistent": true,
+      "priority": 3,
+      "metadata": {
+        "mocklab": {
+          "created": {
+            "at": "2020-01-01T00:00:00.000Z",
+            "via": "SYSTEM"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "total": 38
+  }
+}

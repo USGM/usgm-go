@@ -1,0 +1,18 @@
+{
+  "cliVersion": "5.68.0",
+  "generatorName": "fernapi/fern-go-sdk",
+  "generatorVersion": "1.47.2",
+  "generatorConfig": {
+    "module": {
+      "path": "github.com/usgm/usgm-go",
+      "version": "1.21"
+    },
+    "packageName": "usgm"
+  },
+  "originGitCommit": "5da07ad0c10a1f1aeb2667c60bd8a4df04f370d5",
+  "originGitCommitIsDirty": true,
+  "invokedBy": "ci",
+  "requestedVersion": "1.0.0",
+  "ciProvider": "gitlab",
+  "sdkVersion": "v1.0.0"
+}
