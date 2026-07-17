@@ -2317,13 +2317,6 @@ func TestEnumScansListRequestSort(t *testing.T) {
 }
 
 func TestEnumScansListRequestStatusItem(t *testing.T) {
-	t.Run("NewFromString_submitted", func(t *testing.T) {
-		t.Parallel()
-		val, err := NewScansListRequestStatusItemFromString("submitted")
-		assert.NoError(t, err, "valid enum value should not return error")
-		assert.Equal(t, ScansListRequestStatusItem("submitted"), val, "enum value should match expected wire value")
-	})
-
 	t.Run("NewFromString_in_process", func(t *testing.T) {
 		t.Parallel()
 		val, err := NewScansListRequestStatusItemFromString("in_process")
@@ -2372,7 +2365,7 @@ func TestEnumScansListRequestStatusItem(t *testing.T) {
 	})
 
 	t.Run("Ptr", func(t *testing.T) {
-		val, err := NewScansListRequestStatusItemFromString("submitted")
+		val, err := NewScansListRequestStatusItemFromString("in_process")
 		assert.NoError(t, err)
 		ptr := val.Ptr()
 		assert.NotNil(t, ptr)

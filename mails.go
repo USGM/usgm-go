@@ -798,7 +798,7 @@ var (
 type MailDetailDtoScan struct {
 	// Scan id — fetch it via `/v1/scans/{uuid}`.
 	UUID string `json:"uuid" url:"uuid"`
-	// `SUBMITTED`, `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
+	// `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
 	Status string `json:"status" url:"status"`
 	// `SCAN_REQUEST` or `UNBOXING_REQUEST`.
 	Category string `json:"category" url:"category"`
@@ -1310,7 +1310,7 @@ var (
 type MailPageDtoDataItemScan struct {
 	// Scan id — fetch it via `/v1/scans/{uuid}`.
 	UUID string `json:"uuid" url:"uuid"`
-	// `SUBMITTED`, `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
+	// `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
 	Status string `json:"status" url:"status"`
 	// `SCAN_REQUEST` or `UNBOXING_REQUEST`.
 	Category string `json:"category" url:"category"`
@@ -1532,7 +1532,6 @@ func (m MailsListRequestMailTypeItem) Ptr() *MailsListRequestMailTypeItem {
 type MailsListRequestScanStatusItem string
 
 const (
-	MailsListRequestScanStatusItemSubmitted MailsListRequestScanStatusItem = "submitted"
 	MailsListRequestScanStatusItemInProcess MailsListRequestScanStatusItem = "in_process"
 	MailsListRequestScanStatusItemCancelled MailsListRequestScanStatusItem = "cancelled"
 	MailsListRequestScanStatusItemRejected  MailsListRequestScanStatusItem = "rejected"
@@ -1544,8 +1543,6 @@ const (
 
 func NewMailsListRequestScanStatusItemFromString(s string) (MailsListRequestScanStatusItem, error) {
 	switch s {
-	case "submitted":
-		return MailsListRequestScanStatusItemSubmitted, nil
 	case "in_process":
 		return MailsListRequestScanStatusItemInProcess, nil
 	case "cancelled":
@@ -1594,9 +1591,10 @@ func (m MailsListRequestSort) Ptr() *MailsListRequestSort {
 type MailsListRequestStatusItem string
 
 const (
-	MailsListRequestStatusItemInbox      MailsListRequestStatusItem = "inbox"
-	MailsListRequestStatusItemArchived   MailsListRequestStatusItem = "archived"
-	MailsListRequestStatusItemQuarantine MailsListRequestStatusItem = "quarantine"
+	MailsListRequestStatusItemInbox          MailsListRequestStatusItem = "inbox"
+	MailsListRequestStatusItemArchived       MailsListRequestStatusItem = "archived"
+	MailsListRequestStatusItemQuarantine     MailsListRequestStatusItem = "quarantine"
+	MailsListRequestStatusItemDiscardRequest MailsListRequestStatusItem = "discard_request"
 )
 
 func NewMailsListRequestStatusItemFromString(s string) (MailsListRequestStatusItem, error) {
@@ -1607,6 +1605,8 @@ func NewMailsListRequestStatusItemFromString(s string) (MailsListRequestStatusIt
 		return MailsListRequestStatusItemArchived, nil
 	case "quarantine":
 		return MailsListRequestStatusItemQuarantine, nil
+	case "discard_request":
+		return MailsListRequestStatusItemDiscardRequest, nil
 	}
 	var t MailsListRequestStatusItem
 	return "", fmt.Errorf("%s is not a valid %T", s, t)

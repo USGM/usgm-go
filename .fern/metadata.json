@@ -9,10 +9,10 @@
     },
     "packageName": "usgm"
   },
-  "originGitCommit": "b24378de0f7034b818ecd6bdd8abac55e34832af",
+  "originGitCommit": "3a5a2c38298c71265506af822adbf934e36e6656",
   "originGitCommitIsDirty": true,
   "invokedBy": "ci",
-  "requestedVersion": "1.0.3",
+  "requestedVersion": "1.0.4",
   "ciProvider": "gitlab",
-  "sdkVersion": "v1.0.3"
+  "sdkVersion": "v1.0.4"
 }

@@ -344,7 +344,7 @@ type ScanDto struct {
 	MailID string `json:"mail_id" url:"mail_id"`
 	// `SCAN_REQUEST` (scan the item) or `UNBOXING_REQUEST` (open it and scan the contents).
 	Type string `json:"type" url:"type"`
-	// `SUBMITTED`, `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
+	// `IN_PROCESS`, `COMPLETED`, `CANCELLED`, `REJECTED`, `DELETED` or `RESTORING`.
 	Status      string  `json:"status" url:"status"`
 	IsExpedited bool    `json:"is_expedited" url:"is_expedited"`
 	Instruction *string `json:"instruction,omitempty" url:"instruction,omitempty"`

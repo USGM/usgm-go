@@ -4321,13 +4321,6 @@ func TestEnumMailsListRequestMailTypeItem(t *testing.T) {
 }
 
 func TestEnumMailsListRequestScanStatusItem(t *testing.T) {
-	t.Run("NewFromString_submitted", func(t *testing.T) {
-		t.Parallel()
-		val, err := NewMailsListRequestScanStatusItemFromString("submitted")
-		assert.NoError(t, err, "valid enum value should not return error")
-		assert.Equal(t, MailsListRequestScanStatusItem("submitted"), val, "enum value should match expected wire value")
-	})
-
 	t.Run("NewFromString_in_process", func(t *testing.T) {
 		t.Parallel()
 		val, err := NewMailsListRequestScanStatusItemFromString("in_process")
@@ -4383,7 +4376,7 @@ func TestEnumMailsListRequestScanStatusItem(t *testing.T) {
 	})
 
 	t.Run("Ptr", func(t *testing.T) {
-		val, err := NewMailsListRequestScanStatusItemFromString("submitted")
+		val, err := NewMailsListRequestScanStatusItemFromString("in_process")
 		assert.NoError(t, err)
 		ptr := val.Ptr()
 		assert.NotNil(t, ptr)
@@ -4440,6 +4433,13 @@ func TestEnumMailsListRequestStatusItem(t *testing.T) {
 		val, err := NewMailsListRequestStatusItemFromString("quarantine")
 		assert.NoError(t, err, "valid enum value should not return error")
 		assert.Equal(t, MailsListRequestStatusItem("quarantine"), val, "enum value should match expected wire value")
+	})
+
+	t.Run("NewFromString_discard_request", func(t *testing.T) {
+		t.Parallel()
+		val, err := NewMailsListRequestStatusItemFromString("discard_request")
+		assert.NoError(t, err, "valid enum value should not return error")
+		assert.Equal(t, MailsListRequestStatusItem("discard_request"), val, "enum value should match expected wire value")
 	})
 
 	t.Run("NewFromString_Invalid", func(t *testing.T) {
